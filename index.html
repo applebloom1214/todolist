@@ -4,8 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Todo List</title>
   </head>
-  <body></body>
+  <body>
+    <h1 id="clock"></h1>
+    <form id="loginForm" class="hide">
+        <label for="username">아이디 </label>
+        <input type="text" id="username" placeholder="id를 입력하세요">
+        <button id="loginBtn">로그인</button>
+    </form>
+    <h2 id="loginSuccess" class="hide"></h2>
+    <form id="todoForm">
+        <input id="todoInput" type="text" placeholder="할일을 입력해주세요">
+    </form>
+    <ul id="todoList">
+
+    </ul>
+    <div id="weatherLocation">
+
+    </div>
+    </div>
+    <script src="src/index.js"></script>
+    <script src="src/clock.js"></script>
+    <script src="src/todo.js"></script>
+  </body>
 </html>
