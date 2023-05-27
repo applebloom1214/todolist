@@ -31,6 +31,9 @@ function printTodoList(todo) {
 function addTodoList(event) {
     event.preventDefault();
     const todo = todoInput.value;
+    if (todo === "") {
+        return;
+    }
     const todoObject = {
         text: todo,
         id: Date.now(),

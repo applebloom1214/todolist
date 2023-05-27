@@ -10,7 +10,24 @@ function onGeoOk(position) {
             const cityName = document.querySelector("#weather span:first-child");
             const weather = document.querySelector("#weather span:last-child");
             cityName.innerText = data.name;
-            weather.innerText = `${data.weather[0].main} / ${Math.floor(data.main.temp)}℃`;
+            let weatherIcon = data.weather[0].main;
+            if (weatherIcon === "Rain") {
+                weatherIcon = "☂";
+            } else if (weatherIcon === "Thunderstorm") {
+                weatherIcon = "⚡";
+            } else if (weatherIcon === "Drizzle") {
+                weatherIcon = "☂";
+            } else if (weatherIcon === "Snow") {
+                weatherIcon = "❄";
+            } else if (weatherIcon === "Atmosphere") {
+                weatherIcon = "🌫";
+            } else if (weatherIcon === "Clear") {
+                weatherIcon = "🌞";
+            } else if (weatherIcon === "Clouds") {
+                weatherIcon = "☁";
+            }
+
+            weather.innerText = `${weatherIcon}  ${Math.floor(data.main.temp)} ℃`;
         });
 }
 

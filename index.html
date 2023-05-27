@@ -8,23 +8,21 @@
     <title>Todo List</title>
   </head>
   <body>
-    <h1 id="clock"></h1>
-    <form id="loginForm" class="hide">
-        <label for="username">아이디 </label>
-        <input type="text" id="username" placeholder="id를 입력하세요">
+    <div id="wrap">
+      <h1 id="clock"></h1>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+      <form id="loginForm" class="hide flex">
+        <input type="text" id="username" placeholder="id를 입력하세요" />
         <button id="loginBtn">로그인</button>
-    </form>
-    <h2 id="loginSuccess" class="hide"></h2>
-    <form id="todoForm">
-        <input id="todoInput" type="text" placeholder="할일을 입력해주세요">
-    </form>
-    <ul id="todoList">
-
-    </ul>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
+      </form>
+      <h2 id="loginSuccess" class="hide"></h2>
+      <form id="todoForm">
+        <input id="todoInput" type="text" placeholder="TO DO LIST" />
+      </form>
+      <ul id="todoList"></ul>
     </div>
     <script src="src/index.js"></script>
     <script src="src/clock.js"></script>
