@@ -1,11 +1,12 @@
 const loginForm = document.querySelector("#loginForm");
-const loginSuccess = document.querySelector("#loginSuccess");
-const btn = document.querySelector("#loginBtn");
 const username = document.querySelector("#username");
 
 
-function printLoginSuccess() {
-    loginSuccess.innerHTML = `환영합니다 ! ${localStorage.getItem("id")}님 !`;
+function printLoginSuccess(username) {
+    const todoInput = document.querySelector("#todoInput");
+    todoInput.placeholder = `${username}' s TO DO LIST`;
+    todoInput.disabled = false;
+    todoInput.style.borderBottom = "2px solid black";
 }
 
 function login(event) {
@@ -16,14 +17,13 @@ function login(event) {
         return;
     }
     localStorage.setItem("id", getUsername);
-    printLoginSuccess();
-    loginSuccess.classList.remove("hide");
+    printLoginSuccess(getUsername);
     loginForm.classList.remove("flex");
     loginForm.classList.add("hide");
 
 }
 
-btn.addEventListener("click", login);
+loginForm.addEventListener("submit", login);
 
 const savedUsername = localStorage.getItem("id");
 
@@ -31,8 +31,6 @@ if (savedUsername === null) {
     loginForm.classList.remove("hide");
     loginForm.classList.add("flex");
 } else {
-    loginSuccess.classList.remove("hide");
     loginForm.classList.remove("flex");
-
-    printLoginSuccess();
+    printLoginSuccess(savedUsername);
 }

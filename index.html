@@ -9,18 +9,20 @@
   </head>
   <body>
     <div id="wrap">
-      <h1 id="clock"></h1>
       <div id="weather">
         <span></span>
         <span></span>
       </div>
+      <h1 id="clock"></h1>
       <form id="loginForm" class="hide flex">
-        <input type="text" id="username" placeholder="id를 입력하세요" />
-        <button id="loginBtn">로그인</button>
+        <input
+          type="text"
+          id="username"
+          placeholder="당신의 이름을 알려주세요 !"
+        />
       </form>
-      <h2 id="loginSuccess" class="hide"></h2>
       <form id="todoForm">
-        <input id="todoInput" type="text" placeholder="TO DO LIST" />
+        <input id="todoInput" type="text" disabled />
       </form>
       <ul id="todoList"></ul>
     </div>

@@ -46,9 +46,6 @@ function addTodoList(event) {
 
 todoForm.addEventListener("submit", addTodoList);
 
-function printTodos(item) {
-    console.log(item);
-}
 
 const savedTodos = localStorage.getItem("todos");
 
